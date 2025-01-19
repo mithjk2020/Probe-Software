@@ -9,6 +9,7 @@ function SignUp() {
   const navigate = useNavigate();
   const Username = useRef();
   const Password = useRef();
+  const email = useRef();
 
   // sign up function
   async function signup(event) {
@@ -17,6 +18,7 @@ function SignUp() {
     try {
       const username = Username.current.value;
       const password = Password.current.value;
+      const email = email.current.value;
       const selectedGender = document.querySelector('input[name="gender"]:checked')?.value;
 
       if (!username) {
@@ -61,6 +63,10 @@ function SignUp() {
                 <div className="signin-input-group">
                   <label htmlFor="email">Username</label>
                   <input ref={Username} type="text" name="email" id="email" placeholder="Probe@ecea"  />
+                </div>
+                <div className="signin-input-group">
+                  <label htmlFor="email">Email</label>
+                  <input ref={email} type="text" name="email" id="email" placeholder="Probe@ecea"  />
                 </div>
                 <div className="signin-input-group">
                     <label htmlFor="password">Password</label>
